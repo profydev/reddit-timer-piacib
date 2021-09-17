@@ -1,10 +1,21 @@
 import React from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import GlobalStyle from './globalStyles';
+import SearchPage from './pages/SearchPage/SearchPage';
+import HomePage from './pages/HomePage/HomePage';
 
 function App() {
   return (
-    <div>
-      App Placeholder
-    </div>
+    <Router>
+      <GlobalStyle>
+        <Route path="/">
+          <HomePage />
+        </Route>
+        <Route path="/search">
+          <SearchPage />
+        </Route>
+      </GlobalStyle>
+    </Router>
   );
 }
 
