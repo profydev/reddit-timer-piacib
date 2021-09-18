@@ -1,21 +1,27 @@
 import React from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { ThemeProvider } from 'styled-components';
 import GlobalStyle from './globalStyles';
-import SearchPage from './pages/SearchPage/SearchPage';
-import HomePage from './pages/HomePage/HomePage';
+import SearchPage from './pages/SearchPage';
+import HomePage from './pages/HomePage';
+import theme from './theme';
 
 function App() {
   return (
-    <Router>
-      <GlobalStyle>
-        <Route path="/">
-          <HomePage />
-        </Route>
-        <Route path="/search">
-          <SearchPage />
-        </Route>
-      </GlobalStyle>
-    </Router>
+    <ThemeProvider theme={theme}>
+      <Router>
+        <GlobalStyle />
+        <Switch>
+          <Route path="/">
+            <HomePage />
+          </Route>
+          <Route path="/search">
+            <SearchPage />
+          </Route>
+          <Route>404 - Not Found</Route>
+        </Switch>
+      </Router>
+    </ThemeProvider>
   );
 }
 
