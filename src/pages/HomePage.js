@@ -7,11 +7,11 @@ import Header from '../components/Header';
 
 const HomePage = () => (
   <div>
+    <Header />
     <Table />
     <Search />
     <Posts />
     <Footer />
-    <Header />
   </div>
 );
 
