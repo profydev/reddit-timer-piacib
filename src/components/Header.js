@@ -31,7 +31,7 @@ const Header = () => (
     <Link to="/">
       <img src={logo} alt="reddit timer logo" />
     </Link>
-    <Link to="/search">Search</Link>
+    <Link to="/search/javascript">Search</Link>
     <Link to="/#how-it-works">How it works</Link>
     <Link to="/#about">About</Link>
   </HeaderContainer>
