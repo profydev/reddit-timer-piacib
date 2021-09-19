@@ -1,8 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
-    @import url('https://fonts.googleapis.com/css2?family=Bitter:wght@400;500&family=Montserrat:wght@400;500&display=swap');
-    import { createGlobalStyle } from 'styled-components';
   /** Montserrat Regular **/
   @font-face {
     font-family: "Montserrat";
