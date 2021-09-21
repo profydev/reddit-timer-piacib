@@ -3,37 +3,35 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import logo from '../logo.svg';
 
+const StyledNavLink = styled(Link)`
+    padding:1px 0 0 1.5625em;
+    white-space: nowrap;
+`;
+const StyledFirstNavLink = styled(StyledNavLink)`
+    justify-content: center;
+    display:flex;
+    `;
+const StyledHeaderSVG = styled(StyledNavLink)`
+    margin-right: auto;
+    padding:0 1.5625em 0 0;
+    justify-content: center;
+    display:flex;
+`;
 const HeaderContainer = styled.header`
   display: flex;
   flex-direction:row;
   align-items: center;
   padding: 2em 5em;
-  a {
-    text-align: center;
-    text-decoration: none;
-    color: rgba(99, 99, 99, 1);
-    padding-top:1px;
-  }
-  a:nth-of-type(1) {
-    margin-right: auto;
-    padding-right: 1.5625em;
-    justify-content: center;
-    display:flex;
-  }
-  a:nth-of-type(3) {
-    padding:1px 1.5625em 0;
-    white-space: nowrap;
-  }
 `;
 
 const Header = () => (
   <HeaderContainer>
-    <Link to="/">
+    <StyledHeaderSVG data-testid="reddit-timer-svg" to="/">
       <img src={logo} alt="reddit timer logo" />
-    </Link>
-    <Link to="/search/javascript">Search</Link>
-    <Link to="/#how-it-works">How it works</Link>
-    <Link to="/#about">About</Link>
+    </StyledHeaderSVG>
+    <StyledFirstNavLink to="/search/javascript">Search</StyledFirstNavLink>
+    <StyledNavLink to="/#how-it-works">How it works</StyledNavLink>
+    <StyledNavLink to="/#about">About</StyledNavLink>
   </HeaderContainer>
 );
 
