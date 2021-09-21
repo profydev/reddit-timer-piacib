@@ -1,4 +1,33 @@
 import React from 'react';
+import styled from 'styled-components';
+import { Link } from 'react-router-dom';
+import sign from '../sign.svg';
 
-const Footer = () => <div />;
+const StyledFooterSVG = styled.img`
+    display: block;
+    margin: 0 auto;
+`;
+const StyledFooterSVGLink = styled(Link)`
+  margin: 0 auto;
+`;
+const StyledFooterLink = styled(Link)`
+    text-align: start;
+    width: 6.875rem;
+`;
+const FooterContainer = styled.footer`
+  display: flex;
+  align-items: center;
+  font-size: 0.875rem;
+  padding: 2em 17.36111%;
+  line-height: 1.249;
+`;
+const Footer = () => (
+  <FooterContainer>
+    <StyledFooterLink to="/">profy.dev</StyledFooterLink>
+    <StyledFooterSVGLink to="/">
+      <StyledFooterSVG src={sign} alt="reddit magnifying glass" />
+    </StyledFooterSVGLink>
+    <StyledFooterLink to="/">Terms & Privacy</StyledFooterLink>
+  </FooterContainer>
+);
 export default Footer;
