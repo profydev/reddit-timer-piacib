@@ -2,6 +2,8 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 import GlobalStyle from './globalStyles';
+import HomePage from './pages/HomePage';
+import SearchPage from './pages/SearchPage';
 import theme from './theme';
 
 function App() {
@@ -10,9 +12,11 @@ function App() {
       <Router>
         <GlobalStyle />
         <Switch>
-          <Route path="/search">Search</Route>
+          <Route path="/search">
+            <SearchPage />
+          </Route>
           <Route path="/">
-            Home
+            <HomePage />
           </Route>
           <Route>404 - Not Found</Route>
         </Switch>

@@ -1,6 +1,6 @@
 const theme = {
   color: {
-    text: '#93918f',
+    text: 'rgba(147, 145, 143, 1)',
   },
   font: {
     family: {

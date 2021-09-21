@@ -1,8 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
-    @import url('https://fonts.googleapis.com/css2?family=Bitter:wght@400;500&family=Montserrat:wght@400;500&display=swap');
-    import { createGlobalStyle } from 'styled-components';
   /** Montserrat Regular **/
   @font-face {
     font-family: "Montserrat";
@@ -61,6 +59,12 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
 
+    }
+    a {
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+    color: rgba(99, 99, 99, 1);
     }
 `;
 export default GlobalStyle;
