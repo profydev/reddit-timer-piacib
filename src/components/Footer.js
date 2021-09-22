@@ -23,11 +23,11 @@ const FooterContainer = styled.footer`
 `;
 const Footer = () => (
   <FooterContainer>
-    <StyledFooterLink to="/">profy.dev</StyledFooterLink>
+    <StyledFooterLink as="a" rel="noopener noreferrer" target="_blank" href="https://profy.dev">profy.dev</StyledFooterLink>
     <StyledFooterSVGLink to="/">
       <StyledFooterSVG src={sign} alt="reddit magnifying glass" />
     </StyledFooterSVGLink>
-    <StyledFooterLink to="/">Terms & Privacy</StyledFooterLink>
+    <StyledFooterLink to="/terms">Terms & Privacy</StyledFooterLink>
   </FooterContainer>
 );
 export default Footer;
