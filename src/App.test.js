@@ -54,7 +54,7 @@ describe('Footer', () => {
     );
     const link = screen.getByRole('link', { name: 'profy.dev' });
     screen.debug(link);
-    expect(link).toHaveAttribute('href', 'https://profy.dev');
+    expect(link).toHaveAttribute('href', 'https://profy.dev/employers');
   });
   test('terms and services link points to correct page', () => {
     render(
