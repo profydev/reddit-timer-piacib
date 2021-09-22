@@ -4,15 +4,15 @@ import { Link } from 'react-router-dom';
 import sign from '../sign.svg';
 
 const StyledFooterSVG = styled.img`
-    display: block;
-    margin: 0 auto;
+  display: block;
+  margin: 0 auto;
 `;
 const StyledFooterSVGLink = styled(Link)`
   margin: 0 auto;
 `;
 const StyledFooterLink = styled(Link)`
-    text-align: start;
-    width: 6.875rem;
+  text-align: start;
+  width: 6.875rem;
 `;
 const FooterContainer = styled.footer`
   display: flex;
@@ -23,7 +23,14 @@ const FooterContainer = styled.footer`
 `;
 const Footer = () => (
   <FooterContainer>
-    <StyledFooterLink as="a" rel="noopener noreferrer" target="_blank" href="https://profy.dev">profy.dev</StyledFooterLink>
+    <StyledFooterLink
+      as="a"
+      rel="noopener noreferrer"
+      target="_blank"
+      href="https://profy.dev/employers"
+    >
+      profy.dev
+    </StyledFooterLink>
     <StyledFooterSVGLink to="/">
       <StyledFooterSVG src={sign} alt="reddit magnifying glass" />
     </StyledFooterSVGLink>
