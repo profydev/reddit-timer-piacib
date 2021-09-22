@@ -21,7 +21,8 @@ const HeaderContainer = styled.header`
   display: flex;
   flex-direction:row;
   align-items: center;
-  padding: 2em 5em;
+  height: ${(props) => props.theme.containerSizes.headerHeight};
+  padding: 0 5em;
 `;
 
 const Header = () => (
