@@ -59,11 +59,9 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
     }
-    a {
-    text-align: center;
-    text-decoration: none;
-    white-space: nowrap;
-    color: rgba(99, 99, 99, 1);
+    input {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
     }
     a {
     text-align: center;
