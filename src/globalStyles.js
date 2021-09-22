@@ -63,7 +63,6 @@ const GlobalStyle = createGlobalStyle`
     text-align: center;
     text-decoration: none;
     white-space: nowrap;
-
     color: rgba(99, 99, 99, 1);
     }
 `;
