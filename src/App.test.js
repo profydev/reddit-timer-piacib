@@ -45,3 +45,35 @@ describe('Header', () => {
     expect(window.location.pathname).toBe('/');
   });
 });
+describe('Footer', () => {
+  test('profy.dev link points to correct page', () => {
+    render(
+      <MemoryRouter>
+        <App />
+      </MemoryRouter>,
+    );
+    const link = screen.getByRole('link', { name: 'profy.dev' });
+    screen.debug(link);
+    expect(link).toHaveAttribute('href', 'https://profy.dev');
+  });
+  test('terms and services link points to correct page', () => {
+    render(
+      <MemoryRouter>
+        <App />
+      </MemoryRouter>,
+    );
+    const link = screen.getByRole('link', { name: /Terms & Privacy/i });
+    userEvent.click(link);
+    expect(window.location.href).toContain('terms');
+  });
+  test('svg logo points to correct link', () => {
+    render(
+      <MemoryRouter>
+        <App />
+      </MemoryRouter>,
+    );
+    const link = screen.getByTestId('reddit-timer-svg');
+    userEvent.click(link);
+    expect(window.location.pathname).toBe('/');
+  });
+});
