@@ -17,7 +17,7 @@ const StyledFooterLink = styled(Link)`
 const FooterContainer = styled.footer`
   display: flex;
   align-items: center;
-  font-size: 0.875rem;
+  font-size: ${(props) => props.theme.font.size.small};
   padding: 2em 17.36111%;
   line-height: 1.249;
 `;
