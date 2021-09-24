@@ -14,6 +14,16 @@ const theme = {
     tableHeadHeight: '52px',
     tableHeadBackground: 'linear-gradient(180deg, #FEFEFE 0%, #E9E9E9 100%);',
     dateContainerWidth: '154px',
+    color: {
+      yellowGreen: 'rgba(224, 229, 163, 1)', // 0
+      greenVeryLight: 'rgba(169, 209, 148, 1)', // 1 - 2
+      greenLight: 'rgba(160, 206, 147, 1)', // 3 - 4
+      greenMedium: 'rgba(140, 200, 148, 1)', // 5
+      greenRegular: 'rgba(94, 179, 145, 1)', // 6 - 8
+      greenMediumLight: 'rgba(90, 173, 140, 1)', // 9
+      blueRegular: 'rgba(57, 132, 163, 1)', // 10? - 11
+
+    },
   },
   font: {
     family: {
@@ -32,6 +42,7 @@ const theme = {
   containerSizes: {
     headerHeight: '100px',
     footerHeight: '100px',
+
   },
 };
 

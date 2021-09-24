@@ -1,6 +1,36 @@
 import React from 'react';
 import styled from 'styled-components';
 
+const colorMap = {
+  0: 'yellowGreen',
+  2: 'greenVeryLight',
+  4: 'greenLight',
+  5: 'greenMedium',
+  8: 'greenRegular',
+  9: 'greenMediumLight',
+  16: 'blueRegular',
+};
+const valueToColor = (value) => {
+  if (value === 0) {
+    return colorMap[0];
+  }
+  if (value <= 2) {
+    return colorMap[2];
+  }
+  if (value <= 4) {
+    return colorMap[4];
+  }
+  if (value === 5) {
+    return colorMap[5];
+  }
+  if (value <= 8) {
+    return colorMap[8];
+  }
+  if (value <= 9) {
+    return colorMap[9];
+  }
+  return colorMap[16];
+};
 const TableContainer = styled.div`
   width: 1114px;
   /* height: 332px; */
@@ -9,7 +39,6 @@ const TableContainer = styled.div`
   grid-template-columns: ${(props) => props.theme.table.dateContainerWidth} auto ;
   grid-template-rows: ${(props) => props.theme.table.tableHeadHeight} auto ;
 `;
-// const TableRow = styled.tr``;
 const TableHead = styled.div`
   height: ${(props) => props.theme.table.tableHeadHeight};
   background: ${(props) => props.theme.table.tableHeadBackground};
@@ -21,7 +50,8 @@ const TableHead = styled.div`
   grid-column: 2;
 `;
 
-const TimeDisplay = styled.th`
+const TimeDisplay = styled.div`
+text-align:center;
   width:${(props) => `calc(2 * ${props.theme.table.boxSize})`};
 `;
 const DateContainer = styled.div`
@@ -34,6 +64,7 @@ justify-content: space-between;
 const DateDisplay = styled.div`
   grid-column: 1;
   grid-row: 2;
+  color: ${(props) => props.theme.color.light};
   width: 100%;
   height: ${(props) => props.theme.table.boxSize};
   text-align: center;
@@ -44,12 +75,15 @@ const DateDisplay = styled.div`
 `;
 const HeatmapTable = styled.table`
   grid-column: 2;
-  grid-row: 2;`;
+  grid-row: 2;
+  `;
 const HeatmapTableRow = styled.tr`
   height: ${(props) => props.theme.table.boxSixe};
 `;
 const HeatMapDataEntry = styled.td`
   text-align: center;
+  background-color: ${(props) => props.theme.table.color[valueToColor(props.value)]};
+  color: ${(props) => props.theme.color.light};
   padding:0;
   height: 40px;
   width:  40px;
@@ -93,7 +127,7 @@ const Table = () => (
       {[1, 2, 3, 4, 5, 6, 7].map((x) => (
         <HeatmapTableRow>
           {[1, 2, 3, 4, 5, 6, 7, 1, 2, 3, 4, 5, 6, 7, 1, 2, 3, 4, 5, 6, 7, 1, 2, 3].map(
-            (y) => <HeatMapDataEntry>{x + y}</HeatMapDataEntry>,
+            (y) => <HeatMapDataEntry value={x + y}>{x + y}</HeatMapDataEntry>,
           )}
         </HeatmapTableRow>
       ))}
