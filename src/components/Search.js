@@ -1,17 +1,12 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 import Table from './Table';
 
 const SearchContainer = styled.div`
   display: flex;
   flex-direction: column;
 align-items: center`;
-const FormContainer = styled.form`
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-`;
 const Headline = styled.h1`
   color: ${(props) => props.theme.color.dark};
   font-size: 38px; 
@@ -21,7 +16,7 @@ const Headline = styled.h1`
 font-weight: normal;
   /* ${(props) => props.theme.font.size.headline}; */
 `;
-const SubmitSubredditSearch = styled.input`
+const SubmitSubredditSearch = styled(Link)`
   background: rgba(253,183,85,1);
   border:none;
   border-radius: 4px;
@@ -31,35 +26,15 @@ const SubmitSubredditSearch = styled.input`
   
   padding: 10px 0;
 `;
-const RLabel = styled.label`
-  display:flex;
-  flex-direction: row;
-  justify-content: center;
-  color:${(props) => props.theme.color.text};
-  
-`;
-const SubredditInput = styled.input`border:none;
-color:inherit;
-width:fit-content;
-`;
 const Search = () => {
-  const [subredditInput, setSubredditInput] = useState('javascript');
-  const handleSubredditInputChange = (event) => setSubredditInput(event.target.value);
-  const handleSubredditSubmit = (event) => {
-    event.preventDefault();
-  };
+  const [subredditInput] = useState('javascript');
   return (
     <SearchContainer>
       <Headline>No reactions to your reddit posts?</Headline>
       <h3>Great timing, great results! Find the best time to post on your subreddit.</h3>
-      <FormContainer onSubmit={handleSubredditSubmit}>
-        <SubmitSubredditSearch type="submit" value="SHOW ME THE BEST TIME" />
-        <RLabel htmlFor="subreddit">
-          r/
-          <SubredditInput name="subreddit" value={subredditInput} type="text" onChange={handleSubredditInputChange} />
-        </RLabel>
-      </FormContainer>
-      <Table subreddit=" " />
+      <SubmitSubredditSearch to="/search/javascript">SHOW ME THE BEST TIME</SubmitSubredditSearch>
+      <p>r/javascript</p>
+      <Table subreddit={subredditInput} />
     </SearchContainer>
   );
 };
