@@ -8,7 +8,11 @@ import theme from './theme';
 import Header from './components/Header';
 import Footer from './components/Footer';
 
-const ContentContainer = styled.div``;
+const ContentContainer = styled.div`
+  width:100%;
+  height:${(props) => `calc(100vh - ${props.theme.containerSizes.headerHeight} - ${props.theme.containerSizes.footerHeight})`};
+  min-height: 800px;
+`;
 function App() {
   return (
     <ThemeProvider theme={theme}>
