@@ -10,6 +10,7 @@ align-items: center`;
 const Headline = styled.h1`
   color: ${(props) => props.theme.color.dark};
   font-size: 38px; 
+  margin: 1.625rem 0 0;
   line-height: 46px;
   letter-spacing: .9px;
   font-style: normal;
@@ -19,21 +20,29 @@ font-weight: normal;
 const SubmitSubredditSearch = styled(Link)`
   background: rgba(253,183,85,1);
   border:none;
+  letter-spacing: .07px;
+  margin: 2.6875rem 0 0; 
   border-radius: 4px;
   font-size: ${(props) => props.theme.font.size.small};
   color: ${(props) => props.theme.color.light};
   width:13.5625rem;
   
-  padding: 10px 0;
+  padding: 0.375rem 0;
 `;
+const SubredditText = styled.p`
+  margin: 2.625rem 0  0 0;
+`;
+const SubText = styled.p`
+  margin:1rem 0 0;
+  `;
 const Search = () => {
   const [subredditInput] = useState('javascript');
   return (
     <SearchContainer>
       <Headline>No reactions to your reddit posts?</Headline>
-      <h3>Great timing, great results! Find the best time to post on your subreddit.</h3>
+      <SubText>Great timing, great results! Find the best time to post on your subreddit.</SubText>
       <SubmitSubredditSearch to="/search/javascript">SHOW ME THE BEST TIME</SubmitSubredditSearch>
-      <p>r/javascript</p>
+      <SubredditText>r/javascript</SubredditText>
       <Table subreddit={subredditInput} />
     </SearchContainer>
   );

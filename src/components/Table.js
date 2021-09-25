@@ -36,6 +36,9 @@ const TableContainer = styled.div`
   /* height: 332px; */
   border: 1px solid black;
   display: grid;
+  margin: 31px 0 0 0;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
   grid-template-columns: ${(props) => props.theme.table.dateContainerWidth} auto ;
   grid-template-rows: ${(props) => props.theme.table.tableHeadHeight} auto ;
 `;
@@ -51,19 +54,22 @@ const TableHead = styled.div`
 `;
 
 const TimeDisplay = styled.div`
-text-align:center;
+  text-align:center;
+  font-size:0.875rem;
+  font-weight: 600;
   width:${(props) => `calc(2 * ${props.theme.table.boxSize})`};
 `;
 const DateContainer = styled.div`
-display: flex;
-flex-direction: column;
-justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   width: ${(props) => props.theme.table.dateContainerWidth};
   background-color:${(props) => props.theme.backgroundColor.tableDay};
-  `;
+`;
 const DateDisplay = styled.div`
   grid-column: 1;
   grid-row: 2;
+  font-size: 0.9375rem;
   color: ${(props) => props.theme.color.light};
   width: 100%;
   height: ${(props) => props.theme.table.boxSize};
@@ -74,6 +80,7 @@ const DateDisplay = styled.div`
   align-items: center;
 `;
 const HeatmapTable = styled.table`
+  border-spacing: 0;
   grid-column: 2;
   grid-row: 2;
   `;
@@ -124,9 +131,9 @@ const Table = () => (
       ))}
     </DateContainer>
     <HeatmapTable>
-      {[1, 2, 3, 4, 5, 6, 7].map((x) => (
+      {[0, 2, 3, 4, 5, 6, 7].map((x) => (
         <HeatmapTableRow>
-          {[1, 2, 3, 4, 5, 6, 7, 1, 2, 3, 4, 5, 6, 7, 1, 2, 3, 4, 5, 6, 7, 1, 2, 3].map(
+          {[0, 2, 3, 4, 5, 6, 7, 1, 2, 3, 4, 5, 6, 7, 1, 2, 3, 4, 5, 6, 7, 1, 2, 3].map(
             (y) => <HeatMapDataEntry value={x + y}>{x + y}</HeatMapDataEntry>,
           )}
         </HeatmapTableRow>
