@@ -38,6 +38,10 @@ const theme = {
     lineHeight: {
       default: 1.69,
     },
+    letterSpacing: {
+      default: '0.07px',
+      h1: '0.75px',
+    },
   },
   containerSizes: {
     headerHeight: '100px',
