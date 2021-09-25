@@ -13,7 +13,7 @@ const StyledFirstNavLink = styled(StyledNavLink)`
     `;
 const StyledHeaderSVG = styled(StyledNavLink)`
     margin-right: auto;
-    padding:0 1.5625em 0 0;
+    padding:0 1.5625em 2px 1px;
     justify-content: center;
     display:flex;
 `;
