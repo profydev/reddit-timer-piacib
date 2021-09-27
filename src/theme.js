@@ -48,6 +48,9 @@ const theme = {
     footerHeight: '100px',
 
   },
+  showBestResults: {
+    width: '13.5625rem',
+  },
 };
 
 export default theme;
