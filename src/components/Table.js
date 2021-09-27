@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import SelectedPostDisplay from './SelectedPostsDisplay';
+import tableImg from '../table.png';
 
 const colorMap = {
   0: 'yellowGreen',
@@ -35,7 +36,7 @@ const valueToColor = (value) => {
 };
 const TableContainer = styled.div`
   width: 1114px;
-  /* height: 332px; */
+  height: 332px;
   border: none;
   display: grid;
   margin: 31px 0 0 0;
@@ -248,7 +249,7 @@ const Table = (
     }
     fetchSubredditData();
   }, [subreddit]);
-  return (
+  return (subreddit ? (
     <>
       <TableContainer>
         <TableHead>
@@ -295,6 +296,12 @@ const Table = (
         ))}
       </SelectedPostContainer>
     </>
+  ) : (
+    <TableContainer>
+
+      <img src={tableImg} alt="heat map table" />
+    </TableContainer>
+  )
   );
 };
 Table.propTypes = {
