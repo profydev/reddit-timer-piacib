@@ -59,11 +59,7 @@ const GlobalStyle = createGlobalStyle`
     letter-spacing: ${(props) => props.theme.font.letterSpacing.h1};
 
     }
-    p, a, button {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 400;
-    }
-    input {
+    p, a, button, input {
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
     }
