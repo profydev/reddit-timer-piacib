@@ -11,6 +11,7 @@ import Footer from './components/Footer';
 const ContentContainer = styled.div`
   width:100%;
   height:${(props) => `calc(100vh - ${props.theme.containerSizes.headerHeight} - ${props.theme.containerSizes.footerHeight})`};
+  height: fit-content;
   min-height: 800px;
 `;
 function App() {
@@ -20,7 +21,7 @@ function App() {
       <Header />
       <ContentContainer>
         <Switch>
-          <Route path="/search">
+          <Route path="/search/:subreddit">
             <SearchPage />
           </Route>
           <Route path="/">
