@@ -28,6 +28,7 @@ const Table = ({ subreddit }) => {
   const [posts, setPosts] = useState([]);
   const [selectedPost, setSelectedPosts] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
   useEffect(() => {
     // early exit function
     if (!subreddit) return {};
@@ -64,7 +65,7 @@ const Table = ({ subreddit }) => {
         setCalendar(updatedCalendar);
         setLoading(false);
       } catch (e) {
-        console.error('Fetch error: ', e);
+        controller?.abort();
       }
     }
     fetchSubredditData(redditUrl);
