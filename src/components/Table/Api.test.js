@@ -23,19 +23,7 @@ const server = setupServer(
 beforeAll(() => server.listen());
 afterEach(() => server.resetHandlers());
 afterAll(() => server.close());
-// test('handler server error', () => {
-//   server.use(
-//     rest.get(url, (req, res, ctx) => res(ctx.status(500))),
-//   );
-//   render(
-//     <MemoryRouter>
-//       <ThemeProvider theme={theme}>
-//         <Table subreddit="javascript" />
-//       </ThemeProvider>
-//     </MemoryRouter>,
-//   screen.debug(screen.getAllByRole(/table/i));
-//   );
-// });
+
 test('when no subreddit is provided table img appears', async () => {
   render(
     <MemoryRouter>
