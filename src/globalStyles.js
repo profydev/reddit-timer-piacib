@@ -48,22 +48,20 @@ const GlobalStyle = createGlobalStyle`
     font-family: ${(props) => props.theme.font.family.default};
     font-size: ${(props) => props.theme.font.size.default};
     line-height: ${(props) => props.theme.font.lineHeight.default};
+    letter-spacing: ${(props) => props.theme.font.letterSpacing.default};
     color: ${(props) => props.theme.color.text};
+    
   }
 
     h1, h2, h3 {
     font-family: 'Bitter', serif;
     font-weight: 400;
+    letter-spacing: ${(props) => props.theme.font.letterSpacing.h1};
+
     }
-    p, a, button {
+    p, a, button, input {
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
-    }
-    a {
-    text-align: center;
-    text-decoration: none;
-    white-space: nowrap;
-    color: rgba(99, 99, 99, 1);
     }
     a {
     text-align: center;
