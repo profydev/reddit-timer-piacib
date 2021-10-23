@@ -30,44 +30,46 @@ const Table = ({ subreddit }) => {
   const [loading, setLoading] = useState(false);
   useEffect(() => {
     // early exit function
-    if (!subreddit) {
-      return;
-    }
+    if (!subreddit) return {};
     const redditUrl = generateUrl({ timeFrame: 'after=1y', subreddit, querySize: 100 });
+    const controller = new AbortController();
     async function fetchSubredditData(url) {
       // reset calendar data while
       // new data is fetched
       setLoading(true);
       setCalendar(defaultCalendar);
       // fetch data
-      const response = await fetch(url);
-      const jsonResp = await response.json();
-      const postsArray = [];
-      jsonResp.data.forEach((post) => {
-        const date = new Date(post.created_utc * 1000);
-        postsArray.push({
-          score: post.score,
-          title: post.title,
-          upvote_ratio: post.upvote_ratio,
-          full_link: post.full_link,
-          author: post.author,
-          created_utc: post.created_utc,
-          created_day: date.getDay(),
-          created_hour: generateHours(date),
+      try {
+        const response = await fetch(url, {
+          signal: controller.signal,
         });
-      });
-      const updatedCalendar = await updateCalendar(postsArray);
-      // set fetched data to states
-      setPosts(postsArray);
-      setCalendar(updatedCalendar);
-      setLoading(false);
-      return {
-        fetchedPosts: postsArray,
-        fetchedCalendar: updatedCalendar,
-      };
+        const jsonResp = await response.json();
+        const postsArray = [];
+        jsonResp.data.forEach((post) => {
+          const date = new Date(post.created_utc * 1000);
+          postsArray.push({
+            score: post.score,
+            title: post.title,
+            upvote_ratio: post.upvote_ratio,
+            full_link: post.full_link,
+            author: post.author,
+            created_utc: post.created_utc,
+            created_day: date.getDay(),
+            created_hour: generateHours(date),
+          });
+        });
+        const updatedCalendar = await updateCalendar(postsArray);
+        // set fetched data to states
+        setPosts(postsArray);
+        setCalendar(updatedCalendar);
+        setLoading(false);
+      } catch (e) {
+        console.error('Fetch error: ', e);
+      }
     }
     fetchSubredditData(redditUrl);
-
+    // cleanup function
+    return () => { controller?.abort(); };
     // updates when new subreddit is searched
   }, [subreddit]);
   return subreddit ? (
