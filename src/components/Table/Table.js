@@ -28,7 +28,6 @@ const Table = ({ subreddit }) => {
   const [posts, setPosts] = useState([]);
   const [selectedPost, setSelectedPosts] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(false);
   useEffect(() => {
     // early exit function
     if (!subreddit) return {};
