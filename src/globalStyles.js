@@ -59,19 +59,13 @@ const GlobalStyle = createGlobalStyle`
     letter-spacing: ${(props) => props.theme.font.letterSpacing.h1};
 
     }
-    p, a, button {
+    p, a, button, input {
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
     }
     input {
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
-    }
-    a {
-    text-align: center;
-    text-decoration: none;
-    white-space: nowrap;
-    color: rgba(99, 99, 99, 1);
     }
 `;
 export default GlobalStyle;

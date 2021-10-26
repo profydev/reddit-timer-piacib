@@ -33,10 +33,9 @@ Cypress.Commands.add('stubFetch', () => {
   }
   // grab fetch polyfill from remote URL, could be also from a local package
   const polyfillUrl = 'https://unpkg.com/unfetch/dist/unfetch.umd.js';
-  cy.request(polyfillUrl)
-    .then((response) => {
-      polyfill = response.body;
-    });
+  cy.request(polyfillUrl).then((response) => {
+    polyfill = response.body;
+  });
 });
 
 Cypress.Commands.add('visitWithStubbedFetch', () => {
@@ -55,16 +54,31 @@ Cypress.Commands.add('visitWithStubbedFetch', () => {
 
 Cypress.Commands.add('initMockRedditAPI', () => {
   cy.server();
-  cy.route('GET', 'https://www.reddit.com/r/javascript/top.json?t=year&limit=100', 'fixture:reddit-response-1.json')
-    .as('fetch-reddit-top-posts-page-1');
-  cy.route('GET', 'https://www.reddit.com/r/javascript/top.json?t=year&limit=100&after=t3_drl1d6', 'fixture:reddit-response-2.json')
-    .as('fetch-reddit-top-posts-page-2');
-  cy.route('GET', 'https://www.reddit.com/r/javascript/top.json?t=year&limit=100&after=t3_ccg6no', 'fixture:reddit-response-3.json')
-    .as('fetch-reddit-top-posts-page-3');
-  cy.route('GET', 'https://www.reddit.com/r/javascript/top.json?t=year&limit=100&after=t3_caufp8', 'fixture:reddit-response-4.json')
-    .as('fetch-reddit-top-posts-page-4');
-  cy.route('GET', 'https://www.reddit.com/r/javascript/top.json?t=year&limit=100&after=t3_e8o8oz', 'fixture:reddit-response-5.json')
-    .as('fetch-reddit-top-posts-page-5');
+  cy.route(
+    'GET',
+    'https://www.reddit.com/r/javascript/top.json?t=year&limit=100',
+    'fixture:reddit-response-1.json',
+  ).as('fetch-reddit-top-posts-page-1');
+  cy.route(
+    'GET',
+    'https://www.reddit.com/r/javascript/top.json?t=year&limit=100&after=t3_drl1d6',
+    'fixture:reddit-response-2.json',
+  ).as('fetch-reddit-top-posts-page-2');
+  cy.route(
+    'GET',
+    'https://www.reddit.com/r/javascript/top.json?t=year&limit=100&after=t3_ccg6no',
+    'fixture:reddit-response-3.json',
+  ).as('fetch-reddit-top-posts-page-3');
+  cy.route(
+    'GET',
+    'https://www.reddit.com/r/javascript/top.json?t=year&limit=100&after=t3_caufp8',
+    'fixture:reddit-response-4.json',
+  ).as('fetch-reddit-top-posts-page-4');
+  cy.route(
+    'GET',
+    'https://www.reddit.com/r/javascript/top.json?t=year&limit=100&after=t3_e8o8oz',
+    'fixture:reddit-response-5.json',
+  ).as('fetch-reddit-top-posts-page-5');
 });
 
 Cypress.Commands.add('waitForRedditRequests', () => {

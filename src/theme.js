@@ -22,7 +22,6 @@ const theme = {
       greenRegular: 'rgba(94, 179, 145, 1)', // 6 - 8
       greenMediumLight: 'rgba(90, 173, 140, 1)', // 9
       blueRegular: 'rgba(57, 132, 163, 1)', // 10? - 11
-
     },
   },
   font: {
@@ -46,7 +45,9 @@ const theme = {
   containerSizes: {
     headerHeight: '100px',
     footerHeight: '100px',
-
+  },
+  showBestResults: {
+    width: '13.5625rem',
   },
 };
 

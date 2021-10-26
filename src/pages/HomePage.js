@@ -1,12 +1,12 @@
 import React from 'react';
-import Search from '../components/Search';
-import Posts from '../components/Posts';
+import Search from '../components/Search/Search';
+import Posts from '../components/Posts/Posts';
 
 const HomePage = () => (
-  <div>
+  <>
     <Search />
     <Posts />
-  </div>
+  </>
 );
 
 export default HomePage;
