@@ -69,6 +69,3 @@ export const HeatMapDataEntry = styled.td`
   height: 40px;
   width: 40px;
 `;
-export const SelectedPostContainer = styled.div`
-  /* width:100%; */
-`;
