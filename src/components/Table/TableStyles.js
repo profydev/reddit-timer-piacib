@@ -58,6 +58,7 @@ export const TimeDisplay = styled.div`
 `;
 export const DateContainer = styled.div`
   ${'' /* display: flex; */}
+
   flex-direction: column;
   justify-content: space-between;
   width: ${(props) => props.theme.table.dateContainerWidth};
@@ -79,6 +80,7 @@ export const DateDisplay = styled.div`
   text-align: center;
   color: ${(props) => props.theme.color.light};
   height: ${(props) => props.theme.table.boxSize};
+
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -99,7 +101,6 @@ export const HeatmapTableBody = styled.tbody`
   border-spacing: 0;
   grid-column: 2;
   grid-row: 2;
-  
 `;
 export const HeatmapTableRow = styled.tr`
   height: ${(props) => props.theme.table.boxSixe};
