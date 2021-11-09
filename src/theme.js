@@ -13,7 +13,7 @@ const theme = {
     boxSize: '40px',
     tableHeadHeight: '52px',
     tableHeadBackground: 'linear-gradient(180deg, #FEFEFE 0%, #E9E9E9 100%);',
-    dateContainerWidth: '154px',
+    dateContainerWidth: '9.625rem',
     color: {
       yellowGreen: 'rgba(224, 229, 163, 1)', // 0
       greenVeryLight: 'rgba(169, 209, 148, 1)', // 1 - 2
@@ -23,6 +23,14 @@ const theme = {
       greenMediumLight: 'rgba(90, 173, 140, 1)', // 9
       blueRegular: 'rgba(57, 132, 163, 1)', // 10? - 11
     },
+  },
+  tableMobile: {
+    tableMinimizeMaxWidth: '800px',
+    boxSize: '20px',
+    tableHeadHeight: '52px',
+    tableHeadBackground: 'linear-gradient(180deg, #FEFEFE 0%, #E9E9E9 100%);',
+    dateContainerWidth: '100px',
+
   },
   font: {
     family: {
