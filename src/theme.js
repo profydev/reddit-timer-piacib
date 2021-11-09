@@ -26,11 +26,6 @@ const theme = {
   },
   tableMobile: {
     tableMinimizeMaxWidth: '800px',
-    boxSize: '20px',
-    tableHeadHeight: '52px',
-    tableHeadBackground: 'linear-gradient(180deg, #FEFEFE 0%, #E9E9E9 100%);',
-    dateContainerWidth: '100px',
-
   },
   font: {
     family: {
