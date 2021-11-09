@@ -43,12 +43,18 @@ export const TableHead = styled.div`
   flex-direction: row;
   align-items: center;
   grid-column: 2;
+  @media (max-width: ${(props) => props.theme.tableMobile.tableMinimizeMaxWidth}) {    
+    height: 4.5rem;
+  }
 `;
 export const TimeDisplay = styled.div`
   text-align: center;
   font-size: 0.875rem;
   font-weight: 600;
   width: ${(props) => `calc(2 * ${props.theme.table.boxSize})`};
+  @media (max-width: ${(props) => props.theme.tableMobile.tableMinimizeMaxWidth}) {    
+    transform: rotate(-90deg);
+  } 
 `;
 export const DateContainer = styled.div`
   ${'' /* display: flex; */}
@@ -70,20 +76,16 @@ export const DateDisplay = styled.div`
   grid-column: 1;
   grid-row: 2;
   font-size: 0.9375rem;
-   color: ${(props) => props.theme.color.light};
-  ${'' /* width: 100%; */}
-  height: ${(props) => props.theme.table.boxSize};
   text-align: center;
+  color: ${(props) => props.theme.color.light};
+  height: ${(props) => props.theme.table.boxSize};
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   @media (max-width: ${(props) => props.theme.tableMobile.tableMinimizeMaxWidth}) {    
-    width: 154px;
-    justify-content: center; 
-    font-size: 0.85rem;
-
-${'' /*  */}
+    width: ${(props) => props.theme.table.dateContainerWidth};
+    font-size: 0.8rem;
     line-height: 1;
     writing-mode: vertical-rl;
     transform: rotate(-90deg);
@@ -92,9 +94,6 @@ ${'' /*  */}
 `;
 export const HeatmapTable = styled.table`
  border-spacing: 0;
-  ${'' /* @media (max-width: ${(props) => props.theme.tableMobile.tableMinimizeMaxWidth}) {
-    transform: rotate(90deg);
-  } */}
 `;
 export const HeatmapTableBody = styled.tbody`
   border-spacing: 0;
