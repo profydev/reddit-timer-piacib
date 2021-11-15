@@ -27,6 +27,9 @@ const theme = {
   tableMobile: {
     tableMinimizeMaxWidth: '800px',
   },
+  mobile: {
+    menuMinimizeWidth: '600px',
+  },
   font: {
     family: {
       default: '"Montserrat", sans-serif',
