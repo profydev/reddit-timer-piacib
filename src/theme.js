@@ -24,9 +24,6 @@ const theme = {
       blueRegular: 'rgba(57, 132, 163, 1)', // 10? - 11
     },
   },
-  tableMobile: {
-    tableMinimizeMaxWidth: '800px',
-  },
   mobile: {
     menuMinimizeWidth: '600px',
   },
