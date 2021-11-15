@@ -69,5 +69,11 @@ const GlobalStyle = createGlobalStyle`
     white-space: nowrap;
     color: rgba(99, 99, 99, 1);
     }
+    a {
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+    color: rgba(99, 99, 99, 1);
+    }
 `;
 export default GlobalStyle;
