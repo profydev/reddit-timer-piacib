@@ -26,7 +26,6 @@ export const TableContainer = styled.div`
 `;
 export const HeatMapImage = styled.img`
   @media (max-width: ${(props) => props.theme.mobile.tableMinimizeMaxWidth}) {    
-  
   }
 
 `;
@@ -49,6 +48,7 @@ export const TimeDisplay = styled.div`
   font-weight: 600;
   width: ${(props) => `calc(2 * ${props.theme.table.boxSize})`};
   @media (max-width: ${(props) => props.theme.mobile.tableMinimizeMaxWidth}) {    
+
     transform: rotate(-90deg);
   } 
 `;
@@ -60,6 +60,7 @@ export const DateContainer = styled.div`
   background-color: ${(props) => props.theme.backgroundColor.tableDay};
 
   @media (max-width: ${(props) => props.theme.mobile.tableMinimizeMaxWidth}) {    
+
  ${'' /* transform: rotate(90deg); */}
  ${'' /* position: sticky; */}
  left:-550px;
@@ -95,7 +96,6 @@ export const HeatmapTableBody = styled.tbody`
   border-spacing: 0;
   grid-column: 2;
   grid-row: 2;
-  
 `;
 export const HeatmapTableRow = styled.tr`
   height: ${(props) => props.theme.table.boxSixe};
