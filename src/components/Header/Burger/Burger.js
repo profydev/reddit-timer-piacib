@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  bool, func, string, arrayOf,
+  bool, func, string, arrayOf, shape,
 } from 'prop-types';
 import {
   BurgerMenuContainer, Menu, MenuItems, StyledBurger,
@@ -32,10 +32,10 @@ const Burger = ({ open, setOpen, menuList }) => {
 Burger.propTypes = {
   open: bool.isRequired,
   setOpen: func.isRequired,
-  menuList: arrayOf({
+  menuList: arrayOf(shape({
     displayName: string,
     href: string,
-  }).isRequired,
+  })).isRequired,
 };
 
 export default Burger;
