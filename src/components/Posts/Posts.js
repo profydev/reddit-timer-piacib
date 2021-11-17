@@ -7,7 +7,7 @@ import {
 import SelectedPostDisplay from './SelectedPostsDisplay';
 
 const Posts = ({ selectedPosts }) => {
-  if (!selectedPosts) { return null; }
+  if (!selectedPosts.length) { return <></>; }
   return (
     <PostsContainer>
       <PostsHeader>
@@ -19,6 +19,7 @@ const Posts = ({ selectedPosts }) => {
       {selectedPosts.map((post) => (
         <SelectedPostDisplay
           title={post.title}
+          key={post.title}
           score={post.score}
           upvoteRatio={post.upvote_ratio}
           fullLink={post.full_link}
