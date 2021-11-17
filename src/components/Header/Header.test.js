@@ -2,7 +2,10 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import userEvent from '@testing-library/user-event';
+import { ThemeProvider } from 'styled-components';
 import App from '../../App';
+import theme from '../../theme';
+import Header from './Header';
 
 const headerButtons = {
   'How it works': {
@@ -41,5 +44,29 @@ describe('Header', () => {
     const link = screen.getByTestId('reddit-timer-svg');
     userEvent.click(link);
     expect(window.location.pathname).toBe('/');
+  });
+  test('burger menu opens when clicked', () => {
+    render(
+      <MemoryRouter>
+        <ThemeProvider theme={theme}>
+          <Header />
+        </ThemeProvider>
+      </MemoryRouter>,
+    );
+    const burgerMenu = screen.getByLabelText('Toggle menu');
+    userEvent.click(burgerMenu);
+    expect(burgerMenu).toHaveAttribute('aria-expanded', 'true');
+  });
+  test('burger menu closes when clicked twice', () => {
+    render(
+      <MemoryRouter>
+        <ThemeProvider theme={theme}>
+          <Header />
+        </ThemeProvider>
+      </MemoryRouter>,
+    );
+    const burgerMenu = screen.getByLabelText('Toggle menu');
+    userEvent.dblClick(burgerMenu);
+    expect(burgerMenu).toHaveAttribute('aria-expanded', 'false');
   });
 });
