@@ -25,8 +25,7 @@ const theme = {
     },
   },
   mobile: {
-    tableMinimizeMaxWidth: '800px',
-    menuMinimizeWidth: '800px',
+    menuMinimizeWidth: '600px',
   },
   font: {
     family: {
