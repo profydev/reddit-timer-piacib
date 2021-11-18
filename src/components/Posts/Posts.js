@@ -2,19 +2,22 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {
   PostsContainer, PostsHeader,
-  TitleHeadEntry,
 } from './PostsStyle';
 import SelectedPostDisplay from './SelectedPostsDisplay';
 
 const Posts = ({ selectedPosts }) => {
-  if (!selectedPosts.length) { return <></>; }
+  if (!selectedPosts.length) {
+    return (
+      <></>
+    );
+  }
   return (
     <PostsContainer>
       <PostsHeader>
-        <TitleHeadEntry>Title</TitleHeadEntry>
-        <TitleHeadEntry>Score</TitleHeadEntry>
-        <TitleHeadEntry>Upvote Ratio</TitleHeadEntry>
-        <TitleHeadEntry>Author</TitleHeadEntry>
+        <th>Title</th>
+        <th>Score</th>
+        <th>Upvote Ratio</th>
+        <th>Author</th>
       </PostsHeader>
       {selectedPosts.map((post) => (
         <SelectedPostDisplay

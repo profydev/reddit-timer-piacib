@@ -5,38 +5,50 @@ export const PostsContainer = styled.table`
   border:1px solid black;
   border-collapse:collapse;
   margin-top: 2rem;
-  th:nth-of-type(1) {
-        padding-left: .5rem;
-    }
+  @media (max-width: 900px) {
+    width: 80vw;
+  }
 `;
-export const PostsHeader = styled.tr`
+const TR = styled.tr`
+text-align:center;
+ > :first-child {
+        padding-left: .5rem;
+        text-align: start;
+    }`;
+export const PostsHeader = styled(TR)`
     width:100%;
     background:grey;
     color:white;
+    @media (max-width: ${(props) => props.theme.mobile.tableMinimizeMaxWidth}) {    
+    width: 300px;
+    height: 4rem;
+    }
+  
 `;
-export const TitleHeadEntry = styled.th`
-    text-align:start;
-    white-space:nowrap;
+export const SelectedPost = styled(TR)`
+  border: 1px solid black;
+  width: 100%;
+  height:1rem;
 `;
 export const SelectedPostTitle = styled.a`
   height: 1rem;
 `;
-export const SelectedPostAttribute = styled.div`
+export const EllipsisTD = styled.td`
   white-space: nowrap;
-`;
-export const SelectedPost = styled.tr`
-  border: 1px solid black;
-  width: 100%;
-  td:nth-of-type(1) {
-        padding-left: .5rem;
-    }
-  
-`;
-export const TitleContainer = styled.div`
-  white-space: nowrap;
-  max-width: 400px;
   overflow: hidden;
   text-overflow: ellipsis;
 `;
-export const TD = styled.td`
+export const TitleTD = styled(EllipsisTD)`
+  max-width:400px;
+  @media (max-width: ${(props) => props.theme.mobile.tableMinimizeMaxWidth}) {    
+   max-width:200px;
+  }
+  @media (max-width: 400px) {    
+   max-width:130px;
+  }
+`;
+export const AuthorTD = styled(EllipsisTD)`
+  @media (max-width: ${(props) => props.theme.mobile.tableMinimizeMaxWidth}) {    
+   max-width:50px;
+  }
 `;
