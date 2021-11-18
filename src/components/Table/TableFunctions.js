@@ -2,6 +2,8 @@ export const generateUrl = ({ timeFrame, subreddit, querySize }) => `https://api
 export const generateHours = (date) => date.getHours() + Math.round(date.getMinutes() / 60);
 // converts post number to color
 // color to number or posts relations
+
+export const timeFrames = ['after=1y', 'before=1y&after=2y', 'before=2y&after=3y', 'before=3y&after=4y', 'before=4y&after=5y'];
 const colorMap = {
   0: 'yellowGreen',
   2: 'greenVeryLight',

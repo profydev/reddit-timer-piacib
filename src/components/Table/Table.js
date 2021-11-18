@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
+import SelectedPostDisplay from '../Posts/SelectedPostsDisplay';
 import tableImg from './media/table.png';
 import Loading from '../Loading/Loading';
 import {
@@ -7,9 +8,10 @@ import {
   generateUrl,
   updateCalendar,
   defaultCalendar,
+  timeFrames,
 } from './TableFunctions';
 import {
-  TableContainer,
+  TableContainer, HeatMapImage,
   TableHead,
   TimeDisplay,
   DateContainer,
@@ -17,21 +19,21 @@ import {
   HeatmapTable,
   HeatmapTableBody,
   HeatmapTableRow,
-  HeatMapDataEntry,
+  HeatMapDataEntry, SelectedPostContainer,
 } from './TableStyles';
-import Posts from '../Posts/Posts';
 
 const dates = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+// const dates = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 const times = ['12:00am', '2:00am', '4:00am', '6:00am', '8:00am', '10:00am', '12:00pm', '2:00pm', '4:00pm', '6:00pm', '8:00pm', '10:00pm'];
 const Table = ({ subreddit }) => {
   const [calendar, setCalendar] = useState(defaultCalendar);
   const [posts, setPosts] = useState([]);
-  const [selectedPosts, setSelectedPosts] = useState([]);
+  const [selectedPost, setSelectedPosts] = useState([]);
   const [loading, setLoading] = useState(false);
   useEffect(() => {
     // early exit function
     if (!subreddit) return {};
-    const redditUrl = generateUrl({ timeFrame: 'after=1y', subreddit, querySize: 100 });
+    const redditUrl = generateUrl({ timeFrame: timeFrames[0], subreddit, querySize: 100 });
     const controller = new AbortController();
     async function fetchSubredditData(url) {
       // reset calendar data while
@@ -111,11 +113,21 @@ const Table = ({ subreddit }) => {
           </HeatmapTableBody>
         </HeatmapTable>
       </TableContainer>
-      {selectedPosts ? <Posts selectedPosts={selectedPosts} /> : null }
+      <SelectedPostContainer>
+        {selectedPost.map((post) => (
+          <SelectedPostDisplay
+            title={post.title}
+            score={post.score}
+            upvoteRatio={post.upvote_ratio}
+            fullLink={post.full_link}
+            author={post.author}
+          />
+        ))}
+      </SelectedPostContainer>
     </>
   ) : (
     <TableContainer>
-      <img src={tableImg} alt="heat map table" />
+      <HeatMapImage src={tableImg} alt="heat map table" />
     </TableContainer>
   );
 };
