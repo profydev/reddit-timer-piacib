@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import SelectedPostDisplay from '../Posts/SelectedPostsDisplay';
 import tableImg from './media/table.png';
 import Loading from '../Loading/Loading';
 import {
@@ -19,8 +18,9 @@ import {
   HeatmapTable,
   HeatmapTableBody,
   HeatmapTableRow,
-  HeatMapDataEntry, SelectedPostContainer,
+  HeatMapDataEntry,
 } from './TableStyles';
+import Posts from '../Posts/Posts';
 
 const dates = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 // const dates = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
@@ -28,7 +28,7 @@ const times = ['12:00am', '2:00am', '4:00am', '6:00am', '8:00am', '10:00am', '12
 const Table = ({ subreddit }) => {
   const [calendar, setCalendar] = useState(defaultCalendar);
   const [posts, setPosts] = useState([]);
-  const [selectedPost, setSelectedPosts] = useState([]);
+  const [selectedPosts, setSelectedPosts] = useState([]);
   const [loading, setLoading] = useState(false);
   useEffect(() => {
     // early exit function
@@ -113,17 +113,7 @@ const Table = ({ subreddit }) => {
           </HeatmapTableBody>
         </HeatmapTable>
       </TableContainer>
-      <SelectedPostContainer>
-        {selectedPost.map((post) => (
-          <SelectedPostDisplay
-            title={post.title}
-            score={post.score}
-            upvoteRatio={post.upvote_ratio}
-            fullLink={post.full_link}
-            author={post.author}
-          />
-        ))}
-      </SelectedPostContainer>
+      {selectedPosts ? <Posts selectedPosts={selectedPosts} /> : null }
     </>
   ) : (
     <TableContainer>
