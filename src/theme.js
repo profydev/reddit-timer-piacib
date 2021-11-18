@@ -25,6 +25,7 @@ const theme = {
     },
   },
   mobile: {
+    tableMinimizeMaxWidth: '600px',
     menuMinimizeWidth: '600px',
   },
   font: {
