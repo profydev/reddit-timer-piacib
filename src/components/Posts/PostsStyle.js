@@ -6,7 +6,7 @@ export const PostsContainer = styled.table`
   border-collapse:collapse;
   margin-top: 2rem;
   @media (max-width: 900px) {
-    width: 80vw;
+    width: 90vw;
   }
 `;
 const TR = styled.tr`
@@ -19,6 +19,10 @@ export const PostsHeader = styled(TR)`
     width:100%;
     background:grey;
     color:white;
+    th {
+      border-left: 1px solid black;
+      padding: 0 2px;
+    }
     @media (max-width: ${(props) => props.theme.mobile.tableMinimizeMaxWidth}) {    
     width: 300px;
     height: 4rem;
