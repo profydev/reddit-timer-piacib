@@ -113,7 +113,7 @@ const Table = ({ subreddit }) => {
           </HeatmapTableBody>
         </HeatmapTable>
       </TableContainer>
-      {selectedPosts ? <Posts selectedPosts={selectedPosts} /> : null }
+      <Posts selectedPosts={selectedPosts} />
     </>
   ) : (
     <TableContainer>
