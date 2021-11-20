@@ -2,14 +2,10 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import userEvent from '@testing-library/user-event';
-<<<<<<< HEAD
-import App from '../../App';
-=======
 import { ThemeProvider } from 'styled-components';
 import App from '../../App';
 import theme from '../../theme';
 import Header from './Header';
->>>>>>> main
 
 const headerButtons = {
   'How it works': {
