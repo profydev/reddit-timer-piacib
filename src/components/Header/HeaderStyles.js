@@ -21,4 +21,10 @@ export const HeaderContainer = styled.header`
   align-items: center;
   height: ${(props) => props.theme.containerSizes.headerHeight};
   padding: 0 5em;
+<<<<<<< HEAD
+=======
+  @media (max-width: ${(props) => props.theme.mobile.menuMinimizeWidth}) {    
+  padding: 0 1em 2em;
+  }
+>>>>>>> main
 `;

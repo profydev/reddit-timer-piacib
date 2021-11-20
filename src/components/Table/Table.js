@@ -8,9 +8,16 @@ import {
   generateUrl,
   updateCalendar,
   defaultCalendar,
+<<<<<<< HEAD
 } from './TableFunctions';
 import {
   TableContainer,
+=======
+  timeFrames,
+} from './TableFunctions';
+import {
+  TableContainer, HeatMapImage,
+>>>>>>> main
   TableHead,
   TimeDisplay,
   DateContainer,
@@ -22,6 +29,10 @@ import {
 } from './TableStyles';
 
 const dates = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+<<<<<<< HEAD
+=======
+// const dates = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+>>>>>>> main
 const times = ['12:00am', '2:00am', '4:00am', '6:00am', '8:00am', '10:00am', '12:00pm', '2:00pm', '4:00pm', '6:00pm', '8:00pm', '10:00pm'];
 const Table = ({ subreddit }) => {
   const [calendar, setCalendar] = useState(defaultCalendar);
@@ -31,7 +42,11 @@ const Table = ({ subreddit }) => {
   useEffect(() => {
     // early exit function
     if (!subreddit) return {};
+<<<<<<< HEAD
     const redditUrl = generateUrl({ timeFrame: 'after=1y', subreddit, querySize: 100 });
+=======
+    const redditUrl = generateUrl({ timeFrame: timeFrames[0], subreddit, querySize: 100 });
+>>>>>>> main
     const controller = new AbortController();
     async function fetchSubredditData(url) {
       // reset calendar data while
@@ -125,7 +140,11 @@ const Table = ({ subreddit }) => {
     </>
   ) : (
     <TableContainer>
+<<<<<<< HEAD
       <img src={tableImg} alt="heat map table" />
+=======
+      <HeatMapImage src={tableImg} alt="heat map table" />
+>>>>>>> main
     </TableContainer>
   );
 };
