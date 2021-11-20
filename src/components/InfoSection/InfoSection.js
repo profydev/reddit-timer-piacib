@@ -1,47 +1,15 @@
 import React from 'react';
-import styled from 'styled-components';
+import {
+  Info,
+  InfoContainer,
+  InfoTitle,
+  InfoList,
+  InfoBulletPoint,
+  AboutText,
+  AboutTitle,
+  HyperLink,
+} from './InfoSection.style';
 
-const Info = styled.div`
-`;
-const InfoContainer = styled.div`
-max-width:738px;
-margin: 133px auto 96px auto;
-${Info}:first-child{
-  margin-bottom:100px;
-}
-`;
-const InfoTitle = styled.h3`
-color: ${(props) => props.theme.color.dark};
-font-size: 1.5rem;
-letter-spacing: 0;
-margin-bottom:5px;
-`;
-const InfoList = styled.ul`
-  margin:0;
-  margin-bottom:0;
-  padding:0;
-  list-style:none;
-  li:before{ content:"• ";}
-    li {
-  letter-spacing: 0;
-    }
-`;
-const InfoText = styled.p` margin:0`;
-
-const AboutText = styled(InfoText)`
-/* text-align: justify; */
-`;
-const AboutTitle = styled(InfoTitle)`
-margin-bottom: 7px;
-`;
-const HyperLink = styled.a`
-color: blue;
-:before {
-    content: ' ';
-}
-:after {
-    content: ' ';
-}`;
 const InfoSection = () => (
   <InfoContainer>
     <Info>
@@ -49,15 +17,15 @@ const InfoSection = () => (
         How it works
       </InfoTitle>
       <InfoList>
-        <li>
+        <InfoBulletPoint>
           We find the 500 top posts from the past year for a subreddit.
-        </li>
-        <li>
+        </InfoBulletPoint>
+        <InfoBulletPoint>
           The data is visualized in a heatmap grouped by weekday and hour of the day.
-        </li>
-        <li>
+        </InfoBulletPoint>
+        <InfoBulletPoint>
           See immediately when to submit your reddit post.
-        </li>
+        </InfoBulletPoint>
       </InfoList>
     </Info>
     <Info>
