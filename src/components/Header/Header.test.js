@@ -45,8 +45,6 @@ describe('Header', () => {
     userEvent.click(link);
     expect(window.location.pathname).toBe('/');
   });
-<<<<<<< HEAD
-=======
   test('burger menu opens when clicked', () => {
     render(
       <MemoryRouter>
@@ -71,5 +69,4 @@ describe('Header', () => {
     userEvent.dblClick(burgerMenu);
     expect(burgerMenu).toHaveAttribute('aria-expanded', 'false');
   });
->>>>>>> main
 });
