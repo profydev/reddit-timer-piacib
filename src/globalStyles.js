@@ -63,10 +63,6 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
     }
-    input {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 400;
-    }
     a {
     text-align: center;
     text-decoration: none;
