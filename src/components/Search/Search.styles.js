@@ -13,6 +13,7 @@ export const Headline = styled.h1`
   line-height: 46px;
   letter-spacing: 0.9px;
   font-style: normal;
+  text-align: center;
   font-weight: normal;
   /* ${(props) => props.theme.font.size.headline}; */
 `;
