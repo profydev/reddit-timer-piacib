@@ -13,9 +13,7 @@ import {
 const InfoSection = () => (
   <InfoContainer>
     <Info>
-      <InfoTitle>
-        How it works
-      </InfoTitle>
+      <InfoTitle>How it works</InfoTitle>
       <InfoList>
         <InfoBulletPoint>
           We find the 500 top posts from the past year for a subreddit.
@@ -23,28 +21,17 @@ const InfoSection = () => (
         <InfoBulletPoint>
           The data is visualized in a heatmap grouped by weekday and hour of the day.
         </InfoBulletPoint>
-        <InfoBulletPoint>
-          See immediately when to submit your reddit post.
-        </InfoBulletPoint>
+        <InfoBulletPoint>See immediately when to submit your reddit post.</InfoBulletPoint>
       </InfoList>
     </Info>
     <Info>
-      <AboutTitle>
-        About
-      </AboutTitle>
+      <AboutTitle>About</AboutTitle>
       <AboutText>
         This app was created during a course on
-        <HyperLink>
-          profy.dev
-        </HyperLink>
-        with the
-        goal to implement a pixel-perfect real-world application with
-        professional workflows and tools like Kanban, Asana, Zeplin,
-        GitHub, pull requests and code reviews.
-        <HyperLink>
-          Click here for more
-          information.
-        </HyperLink>
+        <HyperLink>profy.dev</HyperLink>
+        with the goal to implement a pixel-perfect real-world application with professional
+        workflows and tools like Kanban, Asana, Zeplin, GitHub, pull requests and code reviews.
+        <HyperLink>Click here for more information.</HyperLink>
       </AboutText>
     </Info>
   </InfoContainer>
