@@ -67,5 +67,9 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
     }
+    a {
+      text-decoration: none;
+      text-align: center;
+    }
 `;
 export default GlobalStyle;
