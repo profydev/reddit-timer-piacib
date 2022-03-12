@@ -10,6 +10,9 @@ import Footer from './components/Footer/Footer';
 
 const ContentContainer = styled.div`
   width: fit-content;
+  @media (min-width: ${(props) => props.theme.table.tableWidth}) {
+    width: 100%;
+  }
   @media (max-width: ${(props) => props.theme.mobile.tableMinimizeMaxWidth}) {
     width: auto;
   }
