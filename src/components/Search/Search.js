@@ -24,6 +24,8 @@ const SubmitSubredditSearch = styled(Link)`
   letter-spacing: 0.07px;
   margin: 2.6875rem 0 0;
   border-radius: 4px;
+  text-decoration: none;
+  text-align: center;
   font-size: ${(props) => props.theme.font.size.small};
   color: ${(props) => props.theme.color.light};
   width: ${(props) => props.theme.showBestResults.width};
