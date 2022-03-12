@@ -68,8 +68,10 @@ const GlobalStyle = createGlobalStyle`
     font-weight: 400;
     }
     a {
-      text-decoration: none;
-      text-align: center;
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+    color: rgba(99, 99, 99, 1);
     }
 `;
 export default GlobalStyle;
