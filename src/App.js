@@ -9,10 +9,11 @@ import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 
 const ContentContainer = styled.div`
-  width: 100%;
-  height: ${(props) => `calc(100vh - ${props.theme.containerSizes.headerHeight} - ${props.theme.containerSizes.footerHeight})`};
+  width: fit-content;
+  @media (max-width: ${(props) => props.theme.mobile.tableMinimizeMaxWidth}) {
+    width: auto;
+  }
   height: fit-content;
-  ${'' /* min-height: 800px; */}
 `;
 function App() {
   return (
