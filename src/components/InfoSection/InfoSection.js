@@ -8,7 +8,7 @@ import {
   AboutText,
   AboutTitle,
   HyperLink,
-} from './InfoSection.style';
+} from './InfoSection.styles';
 
 const InfoSection = () => (
   <InfoContainer>
