@@ -1,11 +1,11 @@
 import React from 'react';
+import InfoSection from '../components/InfoSection/InfoSection';
 import Search from '../components/Search/Search';
-import Posts from '../components/Posts/Posts';
 
 const HomePage = () => (
   <>
     <Search />
-    <Posts />
+    <InfoSection />
   </>
 );
 

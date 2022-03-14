@@ -10,6 +10,7 @@ const theme = {
     tableDay: 'rgba(30,37,55,1)',
   },
   table: {
+    tableWidth: '1114px',
     boxSize: '40px',
     tableHeadHeight: '52px',
     tableHeadBackground: 'linear-gradient(180deg, #FEFEFE 0%, #E9E9E9 100%);',
