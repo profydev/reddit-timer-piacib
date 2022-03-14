@@ -13,6 +13,7 @@ export const Headline = styled.h1`
   line-height: 46px;
   letter-spacing: 0.9px;
   font-style: normal;
+  text-align: center;
   font-weight: normal;
   /* ${(props) => props.theme.font.size.headline}; */
 `;
@@ -40,6 +41,8 @@ export const SubredditInput = styled.input`
 `;
 export const SubText = styled.p`
   margin: 1rem 0 0;
+  text-align: center;
+  padding: 0 0.5rem;
 `;
 export const SubredditInputContainer = styled.div`
   margin: 2.625rem 0 0;
