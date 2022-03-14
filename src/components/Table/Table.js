@@ -20,7 +20,7 @@ import {
   HeatmapTableBody,
   HeatmapTableRow,
   HeatMapDataEntry, SelectedPostContainer,
-} from './TableStyles';
+} from './Table.styles';
 
 const dates = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 // const dates = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
