@@ -1,64 +1,51 @@
 import styled from 'styled-components';
 import { valueToColor } from './TableFunctions';
 // styled components
+const tableWidth = '1114px';
 export const TableContainer = styled.div`
-  width: ${(props) => props.theme.table.tableWidth};
-  height: 332px;
+  max-width: ${tableWidth};
+  width: 100%;
   border: none;
-  display: grid;
   position: relative;
-  margin: 31px 0 0 0;
-  font-family: 'Montserrat', sans-serif;
+  margin: 2rem 1rem;
+  font-family: "Montserrat", sans-serif;
   font-weight: 600;
   grid-template-columns: ${(props) => props.theme.table.dateContainerWidth} auto;
   grid-template-rows: ${(props) => props.theme.table.tableHeadHeight} auto;
-  @media (max-width: ${(props) => props.theme.mobile.tableMinimizeMaxWidth}) {
-    transform: rotate(90deg);
-    margin-top: 400px;
-    margin-bottom: 400px;
-    margin-left: ${(props) => props.theme.table.tableHeadHeight};
-  }
+  overflow-x:auto;
+  display: ${(props) => !props.exampleContainer && 'grid'};
 `;
 export const HeatMapImage = styled.img`
-  @media (max-width: ${(props) => props.theme.mobile.tableMinimizeMaxWidth}) {
-  }
+  width:1115px;
+  height:333px;
 `;
 
 export const TableHead = styled.div`
   height: ${(props) => props.theme.table.tableHeadHeight};
+  width:960px;
   background: ${(props) => props.theme.table.tableHeadBackground};
   align-self: end;
   display: flex;
   flex-direction: row;
   align-items: center;
   grid-column: 2;
-  @media (max-width: ${(props) => props.theme.mobile.tableMinimizeMaxWidth}) {    
-    height: 4.5rem;
-  }
+
 `;
 export const TimeDisplay = styled.div`
   text-align: center;
   font-size: 0.875rem;
   font-weight: 600;
   width: ${(props) => `calc(2 * ${props.theme.table.boxSize})`};
-  @media (max-width: ${(props) => props.theme.mobile.tableMinimizeMaxWidth}) {
-    transform: rotate(-90deg);
-  }
 
 `;
 export const DateContainer = styled.div`
-  ${'' /* display: flex; */}
   flex-direction: column;
   justify-content: space-between;
   width: ${(props) => props.theme.table.dateContainerWidth};
   background-color: ${(props) => props.theme.backgroundColor.tableDay};
+position:sticky;
+left:0;
 
-  @media (max-width: ${(props) => props.theme.mobile.tableMinimizeMaxWidth}) {
-    left: -550px;
-    top: 0px;
-    z-index: 1;
-
-  }
 `;
 export const DateDisplay = styled.div`
   grid-column: 1;
@@ -71,19 +58,10 @@ export const DateDisplay = styled.div`
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  @media (max-width: ${(props) => props.theme.mobile.tableMinimizeMaxWidth}) {
-
-    width: ${(props) => props.theme.table.dateContainerWidth};
-    font-size: 0.8rem;
-    line-height: 1;
-    writing-mode: vertical-rl;
-    transform: rotate(-90deg);
-    text-orientation: upright;
-  }
 `;
 export const HeatmapTable = styled.table`
   border-spacing: 0;
- }  
+  width:960px;
 `;
 export const HeatmapTableBody = styled.tbody`
   border-spacing: 0;
@@ -101,5 +79,13 @@ export const HeatMapDataEntry = styled.td`
   padding: 0;
   height: 40px;
   width: 40px;
+  
 `;
-export const SelectedPostContainer = styled.div``;
+export const SelectedPostContainer = styled.div`
+`;
+export const ErrorMessage = styled.span`
+width:100%;
+grid-column: 1/-1;
+text-align: center;
+font-size:1.3rem;
+`;
