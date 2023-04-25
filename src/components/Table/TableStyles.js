@@ -13,12 +13,15 @@ export const TableContainer = styled.div`
   font-weight: 600;
   grid-template-columns: ${(props) => props.theme.table.dateContainerWidth} auto;
   grid-template-rows: ${(props) => props.theme.table.tableHeadHeight} auto;
-  overflow: auto;
+  overflow-x: ${(props) => !props.exampleContainer && 'auto'};
   @media (max-width: ${tableWidth}) {
     /* align-self: flex-start; */
   }
 `;
-export const HeatMapImage = styled.img``;
+export const HeatMapImage = styled.img`
+  width:1115px;
+  height:333px;
+`;
 
 export const TableHead = styled.div`
   height: ${(props) => props.theme.table.tableHeadHeight};
@@ -101,4 +104,10 @@ export const HeatMapDataEntry = styled.td`
 `;
 export const SelectedPostContainer = styled.div`
   /* width:100%; */
+`;
+export const ErrorMessage = styled.span`
+width:100%;
+grid-column: 1/-1;
+text-align: center;
+font-size:1.3rem;
 `;

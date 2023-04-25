@@ -11,6 +11,7 @@ const useSubRedditSearch = (subreddit) => {
   const [calendar, setCalendar] = useState(defaultCalendar);
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
   useEffect(() => {
     // early exit function
     if (!subreddit) return {};
@@ -28,6 +29,13 @@ const useSubRedditSearch = (subreddit) => {
         });
         const jsonResp = await response.json();
         const postsArray = [];
+        if (jsonResp.data.length === 0) {
+          setError('no subreddit found');
+          setCalendar(defaultCalendar);
+          setPosts([]);
+          return;
+        }
+        setError(false);
         jsonResp.data.forEach((post) => {
           const date = new Date(post.created_utc * 1000);
           postsArray.push({
@@ -55,6 +63,8 @@ const useSubRedditSearch = (subreddit) => {
     return () => { controller?.abort(); };
     // updates when new subreddit is searched
   }, [subreddit]);
-  return { calendar, posts, loading };
+  return {
+    calendar, posts, loading, error,
+  };
 };
 export default useSubRedditSearch;
