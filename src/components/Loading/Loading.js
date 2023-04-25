@@ -13,10 +13,12 @@ const rotate360 = keyframes`
 `;
 
 const LoadingSVG = styled.img`
+  font-size: 9px;
   animation: ${rotate360} 3s linear infinite;
-height: 200px;
-width: 200px;
-margin: 100px 470px;
+  height: 20em;
+  width:  20em;
+left:calc(50% - 10em);
+top:calc(50% - 10em + ${(props) => props.theme.table.tableHeadHeight} / 2);
 position: absolute;
 `;
 const Loading = ({ isLoading }) => (isLoading ? <LoadingSVG src={loadingImg} alt="loading spinner" /> : null);
