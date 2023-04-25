@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { valueToColor } from './TableFunctions';
 // styled components
-const tableWidth = '1114px';
+const tableWidth = '1115px';
 export const TableContainer = styled.div`
   max-width: ${tableWidth};
   width: 100%;
