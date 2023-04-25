@@ -33,7 +33,7 @@ const Table = ({ subreddit }) => {
   useEffect(() => {
     // early exit function
     if (!subreddit) return {};
-    const redditUrl = generateUrl({ timeFrame: timeFrames[0], subreddit, querySize: 100 });
+    const redditUrl = generateUrl({ timeFrame: timeFrames[0], subreddit, querySize: 500 });
     const controller = new AbortController();
     async function fetchSubredditData(url) {
       // reset calendar data while
