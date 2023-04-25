@@ -1,4 +1,5 @@
-export const generateUrl = ({ timeFrame, subreddit, querySize }) => `https://api.pushshift.io/reddit/submission/search/?subreddit=${subreddit}&${timeFrame}&size=${querySize}&sort=desc&sort_type=score`;
+// export const generateUrl = ({ timeFrame, subreddit, querySize }) => `https://api.pushshift.io/reddit/submission/search/?subreddit=${subreddit}&${timeFrame}&size=${querySize}&sort=desc&sort_type=score`;
+export const generateUrl = ({ timeFrame, subreddit, querySize = 500 }) => `https://api.pushshift.io/reddit/submission/search/?subreddit=${subreddit}&size=${querySize}&${timeFrame}&order=desc&sort=score`;
 export const generateHours = (date) => date.getHours() + Math.round(date.getMinutes() / 60);
 // converts post number to color
 // color to number or posts relations
