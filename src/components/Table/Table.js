@@ -74,6 +74,7 @@ const Table = ({ subreddit }) => {
     return () => { controller?.abort(); };
     // updates when new subreddit is searched
   }, [subreddit]);
+
   return subreddit ? (
     <>
       <TableContainer>
