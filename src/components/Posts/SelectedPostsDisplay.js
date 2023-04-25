@@ -13,14 +13,17 @@ const SelectedPostDisplay = ({
     <SelectedPostTitle href={fullLink}>{title}</SelectedPostTitle>
     <SelectedPostAttribute>
       Score:
+      <span> </span>
       {score}
     </SelectedPostAttribute>
     <SelectedPostAttribute>
       Upvote Ratio:
+      <span> </span>
       {upvoteRatio}
     </SelectedPostAttribute>
     <SelectedPostAttribute>
       Author:
+      <span> </span>
       {author}
     </SelectedPostAttribute>
   </SelectedPost>

@@ -7,6 +7,7 @@ export const SelectedPostTitle = styled.a`
 `;
 export const SelectedPostAttribute = styled.div``;
 export const SelectedPost = styled.div`
-  border: 1px solid black;
+  border-bottom: 1px solid black;
+  margin-bottom: 1rem;
   max-width: 700px;
 `;
