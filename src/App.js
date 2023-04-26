@@ -14,7 +14,6 @@ function App() {
       <ThemeProvider theme={theme}>
         <GlobalStyle />
         <Header />
-        {/* <ContentContainer> */}
         <Switch>
           <Route exact path="/search/:subreddit">
             <SearchPage />
@@ -27,7 +26,6 @@ function App() {
           </Route>
           <Route>404 - Not Found</Route>
         </Switch>
-        {/* </ContentContainer> */}
         <Footer />
       </ThemeProvider>
     </Router>
