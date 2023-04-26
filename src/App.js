@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Switch, BrowserRouter as Router } from 'react-router-dom';
+import { Route, Switch, HashRouter as Router } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 import GlobalStyle from './globalStyles';
 import HomePage from './pages/HomePage';
@@ -20,6 +20,9 @@ function App() {
             <SearchPage />
           </Route>
           <Route exact path="/">
+            <HomePage />
+          </Route>
+          <Route exact path="/reddit-timer-piacib">
             <HomePage />
           </Route>
           <Route>404 - Not Found</Route>
