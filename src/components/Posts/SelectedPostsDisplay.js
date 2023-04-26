@@ -19,7 +19,7 @@ const SelectedPostDisplay = ({
     <SelectedPostAttribute>
       Upvote Ratio:
       <span> </span>
-      {upvoteRatio}
+      {upvoteRatio ? `${upvoteRatio}` : '---'}
     </SelectedPostAttribute>
     <SelectedPostAttribute>
       Author:
