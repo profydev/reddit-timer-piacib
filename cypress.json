@@ -1,5 +1,5 @@
 {
-  "baseUrl": "http://localhost:3000",
+  "baseUrl": "https://piacib.github.io/reddit-timer-piacib/",
   "viewportWidth": 1440,
   "viewportHeight": 950
 }
