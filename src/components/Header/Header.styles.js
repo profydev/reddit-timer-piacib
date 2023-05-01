@@ -1,12 +1,8 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-export const StyledNavLink = styled(Link)`
+const StyledNavLink = styled(Link)`
   padding: 1px 0 0 1.5625em;
-`;
-export const StyledFirstNavLink = styled(StyledNavLink)`
-  justify-content: center;
-  display: flex;
 `;
 export const StyledHeaderSVG = styled(StyledNavLink)`
   margin-right: auto;

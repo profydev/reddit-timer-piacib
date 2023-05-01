@@ -33,7 +33,7 @@ export const valueToColor = (value) => {
   }
   return colorMap[16];
 };
-export const table = {
+const table = {
   0: 0,
   1: 0,
   2: 0,
@@ -70,7 +70,7 @@ export const defaultCalendar = {
   6: table,
 };
   // function to generate each row or day of data
-export const createDayTable = (postsFromOneDay) => {
+const createDayTable = (postsFromOneDay) => {
   const dayTable = {
     0: 0,
     1: 0,
