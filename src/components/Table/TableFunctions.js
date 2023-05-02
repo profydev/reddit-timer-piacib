@@ -1,4 +1,4 @@
-export const generateUrl = ({ timeFrame, subreddit, querySize }) => `https://api.pushshift.io/reddit/submission/search/?subreddit=${subreddit}&${timeFrame}&size=${querySize}&sort=desc&sort_type=score`;
+export const generateUrl = ({ timeFrame, subreddit, querySize = 500 }) => `https://api.pushshift.io/reddit/submission/search/?subreddit=${subreddit}&size=${querySize}&${timeFrame}&order=desc&sort=score`;
 export const generateHours = (date) => date.getHours() + Math.round(date.getMinutes() / 60);
 // converts post number to color
 // color to number or posts relations
@@ -33,7 +33,7 @@ export const valueToColor = (value) => {
   }
   return colorMap[16];
 };
-export const table = {
+const table = {
   0: 0,
   1: 0,
   2: 0,
@@ -70,7 +70,7 @@ export const defaultCalendar = {
   6: table,
 };
   // function to generate each row or day of data
-export const createDayTable = (postsFromOneDay) => {
+const createDayTable = (postsFromOneDay) => {
   const dayTable = {
     0: 0,
     1: 0,

@@ -1,17 +1,11 @@
 import React from 'react';
-import styled from 'styled-components';
 import PropTypes from 'prop-types';
+import {
+  SelectedPostTitle,
+  SelectedPostAttribute,
+  SelectedPost,
+} from './SelectedPostsDisplay.styles';
 
-const SelectedPostTitle = styled.a`
-  max-width: 700px;
-  overflow: hidden;
-  white-space: pre-wrap;
-`;
-const SelectedPostAttribute = styled.div``;
-const SelectedPost = styled.div`
-  border: 1px solid black;
-  max-width: 700px;
-`;
 const SelectedPostDisplay = ({
   title, score, upvoteRatio, fullLink, author,
 }) => (
@@ -19,14 +13,17 @@ const SelectedPostDisplay = ({
     <SelectedPostTitle href={fullLink}>{title}</SelectedPostTitle>
     <SelectedPostAttribute>
       Score:
+      <span> </span>
       {score}
     </SelectedPostAttribute>
     <SelectedPostAttribute>
       Upvote Ratio:
-      {upvoteRatio}
+      <span> </span>
+      {upvoteRatio ? `${upvoteRatio}` : '---'}
     </SelectedPostAttribute>
     <SelectedPostAttribute>
       Author:
+      <span> </span>
       {author}
     </SelectedPostAttribute>
   </SelectedPost>
